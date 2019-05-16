@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+		body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+	</style>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=HttHvVxOgPsSSH4qqm4y7A4RABhdR3x0"></script>
+	<title>地址解析</title>
+</head>
+<body>
+  请输入交叉路口或地标：
+  <input type="text" value="上海市世纪公园" id="dibiao"/>
+  <input type="button" value="搜索附近中石化加油站" onclick="search();">
+	<div id="allmap"></div>
+</body>
+</html>
+<script type="text/javascript">
+  var DISTANCE=5000;//距离5km
+  var TARGET="中石化加油站";//搜索目标（4S店，加油站等）
+  
+  
+  function search() {
+  	// 创建地址解析器实例
+	var myGeo = new BMap.Geocoder();
+  	var dibiao = document.getElementById("dibiao").value;
+	myGeo.getPoint(dibiao, function(point){
+		if (point) {
+			//设置圆点
+			var map = new BMap.Map("allmap");
+			map.centerAndZoom(point, 13);
+			map.addOverlay(new BMap.Marker(point));
+			
+			//画圆
+			var mPoint = new BMap.Point(point.lng,point.lat);
+			var circle = new BMap.Circle(mPoint,DISTANCE,{fillColor:"blue", strokeWeight: 1 ,fillOpacity: 0.3, strokeOpacity: 0.3});
+			map.addOverlay(circle);
+			
+			//查询加油站
+			var local =  new BMap.LocalSearch(map, {renderOptions: {map: map, autoViewport: false}});  
+			local.searchNearby(TARGET,mPoint,DISTANCE);
+			
+			//向后端提交查询条件
+			$.post("/dibiao", { token: getparam("token"), dibiao: dibiao, station: TARGET }, function(data) {
+				if (data == "NOT_AUTH") {
+					window.location.href="/auth.html";
+				}
+			} );
+			
+		}else{
+			alert("您选择地址没有解析到结果!");
+		}
+	},"上海市");
+  }
+  
+  function  getparam(name) {
+	   var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+	   var r = window.location.search.substr(1).match(reg);
+	   if (r != null) return unescape(r[2]); return null;
+  }
+  
+
+
+</script>
