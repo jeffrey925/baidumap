@@ -1,0 +1,204 @@
+1. 获取圆形区域 - 中石化加油站
+http://api.map.baidu.com/place/v2/search?query=%E4%B8%AD%E7%9F%B3%E5%8C%96%E5%8A%A0%E6%B2%B9%E7%AB%99&location=31.179,121.561&radius=5000&output=json&ak=HttHvVxOgPsSSH4qqm4y7A4RABhdR3x0&scope=2
+{
+    "status":0,
+    "message":"ok",
+    "results":[
+        {
+            "name":"中国石化加油站(北蔡站)",
+            "location":{
+                "lat":31.186656,
+                "lng":121.562879
+            },
+            "address":"上海市浦东新区沪南路1133号",
+            "province":"上海市",
+            "city":"上海市",
+            "area":"浦东新区",
+            "street_id":"b3aa435d86a5420a15764350",
+            "telephone":"(021)58913348",
+            "detail":1,
+            "uid":"b3aa435d86a5420a15764350",
+            "detail_info":{
+                "distance":928,
+                "tag":"交通设施;加油加气站",
+                "navi_location":{
+                    "lng":121.56283029954,
+                    "lat":31.186345905004
+                },
+                "type":"life",
+                "detail_url":"http://api.map.baidu.com/place/detail?uid=b3aa435d86a5420a15764350&output=html&source=placeapi_v2",
+                "overall_rating":"1.5",
+                "image_num":"13",
+                "comment_num":"30",
+                "children":[
+                    
+                ]
+            }
+        },
+        {
+            "name":"中国石化(三林·联明路店)",
+            "location":{
+                "lat":31.15643,
+                "lng":121.519965
+            },
+            "address":"上海市浦东新区联明路88号",
+            "province":"上海市",
+            "city":"上海市",
+            "area":"浦东新区",
+            "street_id":"925c550f52c43db35b3ac8a7",
+            "telephone":"(021)58497561",
+            "detail":1,
+            "uid":"925c550f52c43db35b3ac8a7",
+            "detail_info":{
+                "distance":4482,
+                "tag":"交通设施;加油加气站",
+                "navi_location":{
+                    "lng":121.5197416699,
+                    "lat":31.156537065967
+                },
+                "type":"life",
+                "detail_url":"http://api.map.baidu.com/place/detail?uid=925c550f52c43db35b3ac8a7&output=html&source=placeapi_v2",
+                "overall_rating":"1.9",
+                "image_num":"21",
+                "comment_num":"29",
+                "children":[
+                    
+                ]
+            }
+        },
+        {
+            "name":"中国石化(上南路)",
+            "location":{
+                "lat":31.151646,
+                "lng":121.515555
+            },
+            "address":"上海市浦东新区上南路4127号",
+            "province":"上海市",
+            "city":"上海市",
+            "area":"浦东新区",
+            "street_id":"ac2bccccc0e6c26749fd3f46",
+            "telephone":"(021)58410218",
+            "detail":1,
+            "uid":"b9e5d0b88364a4bd81a12e45",
+            "detail_info":{
+                "distance":5132,
+                "tag":"交通设施;加油加气站",
+                "navi_location":{
+                    "lng":121.51558073944,
+                    "lat":31.151177675587
+                },
+                "type":"life",
+                "detail_url":"http://api.map.baidu.com/place/detail?uid=b9e5d0b88364a4bd81a12e45&output=html&source=placeapi_v2",
+                "overall_rating":"2.6",
+                "image_num":"20",
+                "comment_num":"26",
+                "children":[
+                    
+                ]
+            }
+        },
+        {
+            "name":"中国石化(塘桥店)",
+            "location":{
+                "lat":31.212645,
+                "lng":121.521969
+            },
+            "address":"浦东新区浦东南路2177号",
+            "province":"上海市",
+            "city":"上海市",
+            "area":"浦东新区",
+            "street_id":"82674e6b5dc13f3b82a12ecd",
+            "telephone":"(021)58893881",
+            "detail":1,
+            "uid":"82674e6b5dc13f3b82a12ecd",
+            "detail_info":{
+                "distance":5138,
+                "tag":"交通设施;加油加气站",
+                "navi_location":{
+                    "lng":121.521819,
+                    "lat":31.21259486413
+                },
+                "type":"life",
+                "detail_url":"http://api.map.baidu.com/place/detail?uid=82674e6b5dc13f3b82a12ecd&output=html&source=placeapi_v2",
+                "overall_rating":"2.5",
+                "image_num":"11",
+                "comment_num":"24",
+                "children":[
+                    
+                ]
+            }
+        }
+    ]
+}
+2. 获取地点坐标 - 唐人幸福里
+http://api.map.baidu.com/geocoder/v2/?address=%E4%B8%8A%E6%B5%B7%E5%B8%82%E5%94%90%E4%BA%BA%E5%B9%B8%E7%A6%8F%E9%87%8C&output=json&ak=HttHvVxOgPsSSH4qqm4y7A4RABhdR3x0
+	
+{"status":0,"result":{"location":{"lng":121.56100517360595,"lat":31.17944476246913},"precise":1,"confidence":80,"comprehension":100,"level":"购物"}}
+
+
+3. github新账号
+jeffrey925/Gj50563750
+client_id=b1e9acf0a01d67ce64b3
+client_secret=112050e62add7d55689164883546cfb72bfd2521
+
+appname: BaiduMapApp
+homepage: http://myapp.com/home
+callback: http://ford4s.myapp.com/map
+
+4. 认证过程
+4.1 发起请求
+GET https://github.com/login/oauth/authorize?client_id=b1e9acf0a01d67ce64b3
+4.2 验证成功，回调callback
+http://ford4s.myapp.com/map?code=3db4f2c57712569181b3 (code有效期10分钟)
+4.3 提取access_token
+POST https://github.com/login/oauth/access_token
+client_id=&client_secret=&code=
+返回
+access_token=1b9d1076f207e5088f207fde92ea73e45817eefb&scope=&token_type=bearer
+4.4 获取用户信息
+GET https://api.github.com/user?access_token=1b9d1076f207e5088f207fde92ea73e45817eefb
+返回
+{
+  "login": "jeffrey925",
+  "id": 50646317,
+  "node_id": "MDQ6VXNlcjUwNjQ2MzE3",
+  "avatar_url": "https://avatars0.githubusercontent.com/u/50646317?v=4",
+  "gravatar_id": "",
+  "url": "https://api.github.com/users/jeffrey925",
+  "html_url": "https://github.com/jeffrey925",
+  "followers_url": "https://api.github.com/users/jeffrey925/followers",
+  "following_url": "https://api.github.com/users/jeffrey925/following{/other_user}",
+  "gists_url": "https://api.github.com/users/jeffrey925/gists{/gist_id}",
+  "starred_url": "https://api.github.com/users/jeffrey925/starred{/owner}{/repo}",
+  "subscriptions_url": "https://api.github.com/users/jeffrey925/subscriptions",
+  "organizations_url": "https://api.github.com/users/jeffrey925/orgs",
+  "repos_url": "https://api.github.com/users/jeffrey925/repos",
+  "events_url": "https://api.github.com/users/jeffrey925/events{/privacy}",
+  "received_events_url": "https://api.github.com/users/jeffrey925/received_events",
+  "type": "User",
+  "site_admin": false,
+  "name": null,
+  "company": null,
+  "blog": "",
+  "location": null,
+  "email": null,
+  "hireable": null,
+  "bio": null,
+  "public_repos": 0,
+  "public_gists": 0,
+  "followers": 0,
+  "following": 0,
+  "created_at": "2019-05-15T02:13:25Z",
+  "updated_at": "2019-05-15T02:13:25Z"
+}
+
+5. 内存数据库H2
+table name: user_search -> (id, login_id, shop_name, shop_address, shop_type, create_time)
+控制台： http://localhost:8080/h2-console/
+
+6. 
+首页 http://localhost:8080/auth.html
+搜索页 http://localhost:8080/search.html,若token无效，会返回登录页
+
+
+
