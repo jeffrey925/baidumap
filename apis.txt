@@ -137,7 +137,6 @@ http://api.map.baidu.com/geocoder/v2/?address=%E4%B8%8A%E6%B5%B7%E5%B8%82%E5%94%
 
 
 3. github新账号
-jeffrey925/Gj50563750
 client_id=b1e9acf0a01d67ce64b3
 client_secret=112050e62add7d55689164883546cfb72bfd2521
 
